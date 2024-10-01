@@ -979,37 +979,103 @@
                             display: block !important;
                             margin: 0 auto !important;
                         }
+
+                        .section-carousel {
+                            width: 100%;
+                            max-width: 800px;
+                            margin: 0 auto;
+                            padding: 20px;
+                            position: relative;
+                        }
+
+                        .carousel-dots button {
+                            background-color: #333;
+                            width: 12px;
+                            height: 12px;
+                            border-radius: 50%;
+                            margin: 0 5px;
+                            border: none;
+                            opacity: 0.5;
+                            transition: opacity 0.3s ease;
+                        }
+
+                        .carousel-dots button.active {
+                            background-color: #ff5722;
+                            opacity: 1;
+                        }
+
+                        .carousel-dots {
+                            display: flex;
+                            justify-content: center;
+                            margin-top: 10px;
+                        }
+
+                        .carousel-content {
+                            position: relative;
+                            width: 100%;
+                            overflow: hidden;
+                        }
+
+                        .carousel-slide {
+                            display: none;
+                            text-align: center;
+                        }
+
+                        .carousel-slide.active {
+                            display: block;
+                        }
+
+                        .carousel-image {
+                            width: 100%;
+                            height: auto;
+                        }
                     </style>
-                    <section class="produtos-servicos">
-                        <div id="produtosCarousel2" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#produtosCarousel2" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#produtosCarousel2" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#produtosCarousel2" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#produtosCarousel2" data-bs-slide-to="3"
-                                    aria-label="Slide 4"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="./assets/fazemos/00.png" class="imgneogcio" />
+                    <section class="section-carousel img-container">
+                        <div id="customCarousel" class="carousel slide" data-bs-ride="carousel">
+
+                            <div class="carousel-content">
+                                <div class="carousel-slide active">
+                                    <img src="./assets/fazemos/00.png" class="carousel-image" />
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/fazemos/01.png" class="imgneogcio" />
+                                <div class="carousel-slide">
+                                    <img src="./assets/fazemos/01.png" class="carousel-image" />
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/fazemos/02.png" class="imgneogcio" />
+                                <div class="carousel-slide">
+                                    <img src="./assets/fazemos/02.png" class="carousel-image" />
                                 </div>
-                                <div class="carousel-item">
-                                    <img src="./assets/fazemos/03.png" class="imgneogcio" />
+                                <div class="carousel-slide">
+                                    <img src="./assets/fazemos/03.png" class="carousel-image" />
                                 </div>
                             </div>
                         </div>
+                        <div class="carousel-dots">
+                            <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="0" class="active"
+                                aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#customCarousel" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
                     </section>
 
+
                 </div>
+                <script>
+                    const carouselItems = document.querySelectorAll('.carousel-slide');
+                    const dots = document.querySelectorAll('.carousel-dots button');
+
+                    dots.forEach((dot, index) => {
+                        dot.addEventListener('click', () => {
+                            document.querySelector('.carousel-slide.active').classList.remove('active');
+                            document.querySelector('.carousel-dots button.active').classList.remove('active');
+
+                            carouselItems[index].classList.add('active');
+                            dot.classList.add('active');
+                        });
+                    });
+
+                </script>
                 <a href=""
                     style="background-color: #FEC654; text-align: center; padding: 5px 35px; color:#002A43; font-weight: 600; border-radius: 15px; ">Faça
                     parte</a>
