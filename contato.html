@@ -69,8 +69,6 @@
             --bs-gutter-x: 1.5rem;
             --bs-gutter-y: 0;
             width: 100%;
-            padding-right: calc(var(--bs-gutter-x)* .5);
-            padding-left: 0px;
             margin-right: auto;
             margin-left: auto;
         }
@@ -322,10 +320,29 @@
             }
         }
 
-        @media (min-width: 470px) and (max-width: 1100px) {
+        @media screen and (max-width: 1080px) {
+            .subfooter {
+                height: auto;
+                padding: 0px;
+                padding-top: 10px;
+            }
+
+            .subfooter p {
+                font-size: 13px;
+                width: 100%;
+
+            }
+
             footer {
                 flex-direction: column;
                 align-items: center;
+            }
+
+            .logo {
+                height: 60%;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
             }
 
             .footer {
@@ -373,6 +390,22 @@
                 margin: 0px;
                 margin-bottom: 20px;
             }
+
+            .centeremob {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            .linha {
+                height: 1px;
+                width: 99%;
+                background-color: #FFFFFF;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -403,13 +436,13 @@
     </div>
     </div>
     <div class="centerMobile">
-        <img src="./assets/obgmobile.png" style="display: flex; width: 100vw; height: auto;">
+        <img src="./assets/obgmobile.png" style="display: flex; width: 100vw; height: auto; margin-top: 30px;">
     </div>
-    <div class="footer">
+    <div class="footer centeremob">
         <div class="row container-fluid" style="width: 100vw;">
             <div class="col-md-3"></div>
             <div class="col-md-3 d-flex justify-content-center">
-                <div class=" pt-4  text-white">
+                <div class=" pt-4  text-white centeremob">
                     <strong>Contato</strong>
                     <p class="text-white pt-4 d-flex "><svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                             xmlns="http://www.w3.org/2000/svg">
@@ -453,7 +486,10 @@
                         01014-911 - São Paulo - SP</p>
                 </div>
             </div>
-            <div class="col-md-3 d-flex justify-content-center">
+            <div style="width: 100vw; display: flex; align-items: center; justify-content: center;">
+                <div class="linha"></div>
+            </div>
+            <div class="col-md-3 d-flex justify-content-center centeremob">
                 <div class=" pt-4   text-white">
                     <strong>Redes sociais</strong>
                     <p class="text-white pt-4 d-flex">
@@ -503,7 +539,8 @@
             </div>
             <div class="col-md-3"></div>
         </div>
-        <div class="subfooter d-flex" style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="subfooter d-flex centeremob"
+            style="display: flex; justify-content: space-between; align-items: center;">
             <div class="col-md-6 d-flex justify-content-center">
 
                 <img src="./assets/logo.png" class="logo" alt="Logo" />

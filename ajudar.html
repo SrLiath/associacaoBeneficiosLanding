@@ -16,6 +16,7 @@
         body {
             margin: 0;
             overflow-x: hidden;
+            /* Impede o scroll horizontal */
             justify-content: center;
             display: flex;
             flex-direction: column;
@@ -363,6 +364,7 @@
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
+            height: 1050px;
         }
 
         .produtos-servicos h2 {
@@ -443,6 +445,182 @@
         blue {
             color: #4A96D2
         }
+
+        .retang {
+            width: 845px;
+            height: 90px;
+            left: 281px;
+            top: 4460px;
+            margin-bottom: 20px;
+            background: #FFFFFF;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 0px 29px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
+
+        }
+
+        .retang svg {
+            margin-left: 50px;
+            margin-right: -200px;
+        }
+
+        .retang p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 21px;
+            line-height: 25px;
+            display: flex;
+            align-items: center;
+            color: #002A43;
+            text-align: left;
+        }
+
+        .produtos-servicos h2 {
+            padding-top: 800px;
+        }
+
+        .imgdesk {
+            display: flex !important;
+        }
+
+        .imgmoba {
+            display: none !important;
+        }
+
+        .viga {
+            height: 750px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #EAEAEA;
+            overflow: hidden;
+        }
+
+        @media screen and (max-width: 1080px) {
+            .produtos-servicos h2 {
+                padding-top: 200px;
+            }
+
+            .produtos-servicos {
+                height: auto;
+                margin-bottom: 70px;
+            }
+
+            .retang {
+                display: none;
+            }
+
+            .formulario {
+                width: 100vw;
+            }
+
+            .menu {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 80px;
+                right: 20px;
+                background-color: #002D44;
+                width: 200px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .menu.show {
+                display: flex;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .header {
+                justify-content: space-between;
+            }
+
+            .imgmoba {
+                display: flex !important;
+            }
+
+            .imgdesk {
+                display: none !important;
+            }
+
+            .carousel-indicators button {
+                background-color: #000;
+                border-radius: 50% !important;
+                width: 12px !important;
+                height: 12px !important;
+                margin: 0 5px;
+                transition: background-color 0.3s ease;
+            }
+
+            .carousel-indicators {
+                bottom: -37px;
+            }
+
+            .carousel-indicators button.active {
+                background-color: #002A43;
+            }
+
+            .carousel-indicators button:hover {
+                background-color: #000E32;
+            }
+
+            .carousel-indicators [data-bs-target] {
+                background-color: #D9D9D9;
+                opacity: 1;
+            }
+
+            .inputs {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                background-color: #002A43;
+                border-top-left-radius: 40px;
+                border-bottom-right-radius: 40px;
+                width: 90%;
+                height: auto;
+                flex-direction: column;
+                padding: 25px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+                z-index: 1;
+            }
+
+            .barras {
+                display: flex;
+                justify-content: center;
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                margin-left: 25px;
+            }
+
+            .viga {
+                height: auto;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+
+            .logo {
+                height: 60%;
+                object-fit: contain;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .imgneogcio {
+                width: 40vw;
+                margin-right: 30vw;
+                margin-left: 30vw;
+            }
+        }
     </style>
 </head>
 
@@ -468,127 +646,183 @@
         }
     </script>
     <div class="center">
-        <img src='./assets/mapa.png' class="img-fluid w-100" style="object-fit: contain;" />
+        <img src='./assets/mapa.png' class="img-fluid w-100 imgdesk" style="object-fit: contain;" />
+        <img src='./assets/mapaMob.png' class="img-fluid w-100 imgmoba" style="object-fit: contain;" />
         <div>
             <section class="produtos-servicos">
-                <h2 style="padding-top: 800px;">Conheça <span>todos os produtos<br>e serviços</span> que oferecemos</h2>
-                <div class="row justify-content-center d-flex " style="margin: 0 07%;">
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/1.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
-                        </div>
-                        <h3>PORTAL DO MEI</h3>
-                        <p>Saia da informalidade com a ajuda dos especialistas da ACSP.</p>
-                        <a href="#">SAIBA MAIS</a>
+                <h2>Conheça <span>todos os produtos<br>e serviços</span> que oferecemos</h2>
+                <div id="produtosCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#produtosCarousel" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#produtosCarousel" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#produtosCarousel" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                        <button type="button" data-bs-target="#produtosCarousel" data-bs-slide-to="3"
+                            aria-label="Slide 4"></button>
+                        <button type="button" data-bs-target="#produtosCarousel" data-bs-slide-to="4"
+                            aria-label="Slide 5"></button>
+                        <button type="button" data-bs-target="#produtosCarousel" data-bs-slide-to="5"
+                            aria-label="Slide 6"></button>
                     </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/2.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row justify-content-center d-flex" style="margin: 0 07%;">
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/1.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>PORTAL DO MEI</h3>
+                                    <p>Saia da informalidade com a ajuda dos especialistas da ACSP.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/2.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>ATIVAR NEGÓCIOS</h3>
+                                    <p>Grupos de Negócios divididos por região para criar conexões e resultados.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>ATIVAR NEGÓCIOS</h3>
-                        <p>Grupos de Negócios divididos por região para criar conexões e resultados.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/3.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        <div class="carousel-item">
+                            <div class="row justify-content-center d-flex" style="margin: 0 07%;">
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/3.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>EQUIFAX | BOAVISTA</h3>
+                                    <p>Pacotes de análises de crédito de clientes e fornecedores para maior segurança
+                                        nas negociações.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/4.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>PORTAL DO MEI</h3>
+                                    <p>Facilidade para abrir, fechar ou fazer alterações de contratos.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>EQUIFAX | BOAVISTA</h3>
-                        <p>Pacotes de análises de crédito de clientes e fornecedores para maior segurança nas
-                            negociações.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/4.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        <div class="carousel-item">
+                            <div class="row justify-content-center d-flex" style="margin: 0 07%;">
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/5.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>ATIVAR NEGÓCIOS</h3>
+                                    <p>Agilidade e facilidade com atendimento exclusivo para associados.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/6.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>EQUIFAX | BOAVISTA</h3>
+                                    <p>Quatro tipos de certificado, com segurança e validade jurídica, com descontos
+                                        para associados.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>PORTAL DO MEI</h3>
-                        <p>Facilidade para abrir, fechar ou fazer alterações de contratos.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/5.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        <div class="carousel-item">
+                            <div class="row justify-content-center d-flex" style="margin: 0 07%;">
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/7.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>PORTAL DO MEI</h3>
+                                    <p>Plataforma online com ofertas de produtos e serviços para o seu negócio e também
+                                        para você.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/8.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>ATIVAR NEGÓCIOS</h3>
+                                    <p>Ateste que sua empresa é a única a comercializar determinado produto ou serviço
+                                        em até 72 horas.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>ATIVAR NEGÓCIOS</h3>
-                        <p>Agilidade e facilidade com atendimento exclusivo para associados.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/6.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        <div class="carousel-item">
+                            <div class="row justify-content-center d-flex" style="margin: 0 07%;">
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/9.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>EQUIFAX | BOAVISTA</h3>
+                                    <p>Soluções de conflitos empresariais com sigilo, agilidade e segurança jurídica.
+                                    </p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/10.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>PORTAL DO MEI</h3>
+                                    <p>Sistema de solução para questões relacionadas aos direitos patrimoniais.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>EQUIFAX | BOAVISTA</h3>
-                        <p>Quatro tipos de certificado, com segurança e validade jurídica, com descontos para
-                            associados.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/7.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        <div class="carousel-item">
+                            <div class="row justify-content-center d-flex" style="margin: 0 07%;">
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/11.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>ATIVAR NEGÓCIOS</h3>
+                                    <p>Oportunidades para você aumentar sua renda e ainda beneficiar seus clientes com
+                                        uma série de vantagens.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                                <div class="card col-md-6 text-center mb-1">
+                                    <div>
+                                        <img src="./assets/icons/12.png" class="img-fluid my-3"
+                                            style="object-fit: contain; width: 70px; height: 70px;" />
+                                    </div>
+                                    <h3>EQUIFAX | BOAVISTA</h3>
+                                    <p>Formação qualificada em cursos de graduação para empresários e profissionais do
+                                        comércio.</p>
+                                    <a href="#">SAIBA MAIS</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>PORTAL DO MEI</h3>
-                        <p>Plataforma online com ofertas de produtos e serviços para o seu negócio e também para você.
-                        </p>
-                        <a href="#">SAIBA MAIS</a>
                     </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/8.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
-                        </div>
-                        <h3>ATIVAR NEGÓCIOS</h3>
-                        <p>Ateste que sua empresa é a única a comercializar determinado produto ou serviço em até 72
-                            horas.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/9.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
-                        </div>
-                        <h3>EQUIFAX | BOAVISTA</h3>
-                        <p>Soluções de conflitos empresariais com sigilo, agilidade e segurança jurídica.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/10.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
-                        </div>
-                        <h3>PORTAL DO MEI</h3>
-                        <p>Sistema de solução para questões relacionadas aos direitos patrimoniais.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/11.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
-                        </div>
-                        <h3>ATIVAR NEGÓCIOS</h3>
-                        <p>Oportunidades para você aumentar sua renda e ainda beneficiar seus clientes com uma série de
-                            vantagens.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
-                    <div class="card col-md-4 text-center mb-1 ">
-                        <div>
-                            <img src="./assets/icons/12.png" class="img-fluid my-3"
-                                style="object-fit: contain; width: 70px; height: 70px;" />
-                        </div>
-                        <h3>EQUIFAX | BOAVISTA</h3>
-                        <p>Formação qualificada em cursos de graduação para empresários e profissionais do comércio.</p>
-                        <a href="#">SAIBA MAIS</a>
-                    </div>
+
+                    <button class="carousel-control-prev" type="button" data-bs-target="#produtosCarousel"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Anterior</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#produtosCarousel"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Próximo</span>
+                    </button>
                 </div>
             </section>
-            <div class="container-fluid form">
+
+
+            <div class=" form">
                 <div class="formulario">
                     <div class="inputs d-flex">
                         <h3>
@@ -631,8 +865,8 @@
                 </div>
 
             </div>
-            <div
-                style="height: 500px; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center;">
+            <div style="height: 500px; width: 100%; display: flex; flex-direction: row; align-items: center; justify-content: center;"
+                class="imgdesk">
                 <div
                     style="width: 50%; height: 100%; display: flex; flex-direction: column; align-items: start; padding-top: 20px; padding-left: 200px; ">
                     <h2>A Associação Comercial <br>de São Paulo</h2>
@@ -673,43 +907,11 @@
                     <img src="./assets/frontassocia.png" style="width: auto; height: 85%; margin-left: 50px;" />
                 </div>
             </div>
-            <style>
-                .retang {
-                    width: 845px;
-                    height: 90px;
-                    left: 281px;
-                    top: 4460px;
-                    margin-bottom: 20px;
-                    background: #FFFFFF;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    border-radius: 0px 29px;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    flex-direction: row;
+            <img src="./assets/frontmoba.png" style="width: 100vw; object-fit: contain;" class="imgmoba" />
 
-                }
-
-                .retang svg {
-                    margin-left: 50px;
-                    margin-right: -200px;
-                }
-
-                .retang p {
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 21px;
-                    line-height: 25px;
-                    display: flex;
-                    align-items: center;
-                    color: #002A43;
-                    text-align: left;
-                }
-            </style>
-            <div
-                style="height: 750px; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #EAEAEA; overflow: hidden;">
-                <div
-                    style="position: absolute; height: 86%; width: 500px; border-radius: 25px; background-color: #FEC553; right: -450px;">
+            <div class="viga">
+                <div style="position: absolute; height: 86%; width: 500px; border-radius: 25px; background-color: #FEC553; right: -450px"
+                    class="imgdesk">
                 </div>
                 <h2 style="color: #4A96D2">O que fazemos?</h2>
                 <h3 style="margin-bottom: 20px">Atuamos em benefício de nossos<br>associados de diferentes formas:
@@ -717,8 +919,7 @@
                 <div class='retang'>
                     <img src="./assets/fazemos/1.png" class="img-fluid my-3"
                         style="object-fit: contain; width: 61px; height: 70px; margin-left: 30px" />
-                    <div
-                        style="display: flex; justify-content: center;  flex-direction: column; width: 100%; height: 100%; margin-left: 25px;">
+                    <div class="barras">
                         <p>
                             Promovemos o networking entre empreendedores<br>de diversos setores
                             estimulando negócios.
@@ -729,8 +930,7 @@
                 <div class='retang'>
                     <img src="./assets/fazemos/2.png" class="img-fluid my-3"
                         style="object-fit: contain; width: 61px; height: 70px; margin-left: 30px" />
-                    <div
-                        style="display: flex; justify-content: center;  flex-direction: column; width: 100%; height: 100%; margin-left: 25px;">
+                    <div class="barras">
                         <p>Representamos nossos associados ouvindo suas demandas,<br>organizando e promovendo ações que
                             buscam resolver, junto <br>ao poder público, os problemas que afetam as suas empresas.</p>
                     </div>
@@ -739,19 +939,76 @@
 
                     <img src="./assets/fazemos/3.png" class="img-fluid my-3"
                         style="object-fit: contain; width: 61px; height: 70px; margin-left: 30px" />
-                    <div
-                        style="display: flex; justify-content: center;  flex-direction: column; width: 100%; height: 100%; margin-left: 25px;">
+                    <div class="barras">
                         <p>Informamos e capacitamos o empreendedor e suas equipes.</p>
                     </div>
                 </div>
                 <div class='retang'>
                     <img src="./assets/fazemos/4.png" class="img-fluid my-3"
                         style="object-fit: contain; width: 61px; height: 70px; margin-left: 30px" />
-                    <div
-                        style="display: flex; justify-content: center;  flex-direction: column; width: 100%; height: 100%; margin-left: 25px;">
+                    <div class="barras">
                         <p>Negociamos com nossos parceiros comerciais para<br>oferecer produtos, serviços e soluções com
                             melhores <br>condições e custos menores.</p>
                     </div>
+                </div>
+                <div class="imgmoba">
+                    <style>
+                        .carousel-indicators2 button {
+                            background-color: #000;
+                            border-radius: 50% !important;
+                            width: 12px !important;
+                            height: 12px !important;
+                            margin: 0 5px;
+                            transition: background-color 0.3s ease;
+                        }
+
+                        .carousel-indicators2 button.active {
+                            background-color: #002A43;
+                        }
+
+                        .carousel-indicators2 button:hover {
+                            background-color: #000E32;
+                        }
+
+                        .carousel-indicators2 [data-bs-target] {
+                            background-color: #D9D9D9;
+                            opacity: 1;
+                        }
+
+                        .produtos-servicos .carousel-item img {
+                            display: block !important;
+                            margin: 0 auto !important;
+                        }
+                    </style>
+                    <section class="produtos-servicos">
+                        <div id="produtosCarousel2" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#produtosCarousel2" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#produtosCarousel2" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#produtosCarousel2" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#produtosCarousel2" data-bs-slide-to="3"
+                                    aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./assets/fazemos/00.png" class="imgneogcio" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/fazemos/01.png" class="imgneogcio" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/fazemos/02.png" class="imgneogcio" />
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./assets/fazemos/03.png" class="imgneogcio" />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
                 </div>
                 <a href=""
                     style="background-color: #FEC654; text-align: center; padding: 5px 35px; color:#002A43; font-weight: 600; border-radius: 15px; ">Faça
@@ -764,8 +1021,8 @@
         <div class="footer">
             <div class="row container-fluid" style="width: 100vw;">
                 <div class="col-md-3"></div>
-                <div class="col-md-3 d-flex justify-content-center">
-                    <div class=" pt-4  text-white">
+                <div class="col-md-3  d-flex align-items-center justify-content-center">
+                    <div class=" pt-4 pb-5 text-white">
                         <strong>Contato</strong>
                         <p class="text-white pt-4 d-flex "><svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -810,7 +1067,7 @@
                     </div>
                 </div>
                 <div class="col-md-3 d-flex justify-content-center">
-                    <div class=" pt-4   text-white">
+                    <div class=" pt-4 pb-5 text-white">
                         <strong>Redes sociais</strong>
                         <p class="text-white pt-4 d-flex">
                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
@@ -860,48 +1117,20 @@
                 </div>
                 <div class="col-md-3"></div>
             </div>
-            <div class="subfooter d-flex" style="display: flex; justify-content: space-between; align-items: center;">
-                <div class="col-md-6 d-flex justify-content-center">
-
-                    <img src="./assets/logo.png" class="logo" alt="Logo" />
-
-                </div>
-                <div class="col-md-6 d-flex justify-content-center">
-
-                    <p style="color: white; font-weight: 100; float: right">
-                        ACSP - Associação Comercial de São Paulo
-                    </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 d-flex align-items-center">
+                        <img src="./assets/logo.png" class="logo" style="height: 59px;" alt="Logo" />
+                    </div>
+                    <div class="col-md-6 d-flex align-items-center justify-content-center">
+                        <p style="color: white; font-weight: 100; font-size: 15px;">
+                            ACSP - Associação Comercial de São Paulo
+                        </p>
+                    </div>
                 </div>
             </div>
+
         </div>
-        <!-- Mobile -->
-        <style>
-            @media screen and (max-width: 1024px) {
-                .menu {
-                    display: none;
-                    flex-direction: column;
-                    position: absolute;
-                    top: 80px;
-                    right: 20px;
-                    background-color: #002D44;
-                    width: 200px;
-                    padding: 10px;
-                    border-radius: 5px;
-                }
-
-                .menu.show {
-                    display: flex;
-                }
-
-                .hamburger {
-                    display: flex;
-                }
-
-                .header {
-                    justify-content: space-between;
-                }
-            }
-        </style>
 </body>
 
 </html>
