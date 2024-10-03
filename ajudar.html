@@ -11,7 +11,7 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
     <link rel="icon" type="image/ico" href="https://acsp.com.br/public/upload/gallery/lp-associativismo/favicon.ico">
-    <title>Agradecimento | ACSP - Associação Comercial de São Paulo</title>
+    <title>Associativismo | ACSP - Associação Comercial de São Paulo</title>
     <style>
         body {
             margin: 0;
@@ -59,6 +59,7 @@
         .duvida {
             background-color: white;
             color: black;
+            display: none
         }
 
         .container,
@@ -77,8 +78,9 @@
             margin-left: auto;
         }
 
-        .footer p {
-            font-size: 18px;
+        .footer p,
+        .footer a {
+            font-size: 23px;
         }
 
         .footer strong {
@@ -309,11 +311,11 @@
         }
 
         .form {
-            background-image: url('./assets/form.png');
+            background-image: url('http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/form.png');
             background-size: cover;
             background-position: center;
             width: 100vw;
-            height: 700px;
+            height: auto;
             color: white;
             display: flex;
             align-items: center;
@@ -341,7 +343,8 @@
             border-top-left-radius: 40px;
             border-bottom-right-radius: 40px;
             width: 70%;
-            height: 400px;
+            padding-bottom: 20px;
+            height: auto;
             flex-direction: column;
             padding-left: 25px;
             padding-right: 25px;
@@ -364,7 +367,7 @@
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
-            height: 1050px;
+            height: auto;
         }
 
         .produtos-servicos h2 {
@@ -424,7 +427,7 @@
         }
 
         .form {
-            background-image: url('./assets/peoples.png');
+            background-image: url('http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/peoples.png');
             background-size: cover;
             background-position: center;
             width: 100vw;
@@ -449,7 +452,6 @@
         .retang {
             width: 845px;
             height: 90px;
-            left: 281px;
             top: 4460px;
             margin-bottom: 20px;
             background: #FFFFFF;
@@ -459,6 +461,7 @@
             justify-content: space-between;
             align-items: center;
             flex-direction: row;
+
 
         }
 
@@ -621,22 +624,257 @@
                 margin-left: 30vw;
             }
         }
+
+        .retang {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .barras {
+            flex: 1;
+            padding-left: 20px;
+        }
+
+        .barras p {
+            margin: 0;
+            line-height: 1;
+            text-align: left;
+            max-width: 100%;
+        }
     </style>
 </head>
 
 <body>
+    <style>
+        #cookie-consent {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 20px;
+            display: none;
+            /* Inicialmente oculto */
+            z-index: 1000;
+            /* Certifica-se que fica acima de outros conteúdos */
+            background: #F8F8F8;
+            /* Cor de fundo */
+            border-radius: 35px;
+            /* Bordas arredondadas */
+            width: 547px;
+            /* Largura especificada */
+            height: 209px;
+            /* Altura especificada */
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            /* Sombra (opcional) */
+            text-align: center;
+            /* Centraliza o texto */
+        }
+
+        .btn-custom1 {
+            width: 152.98px;
+            /* Largura do botão */
+            height: 28px;
+            /* Altura do botão */
+            background: #4A96D2;
+            /* Cor de fundo do botão */
+            border-radius: 35px;
+            /* Bordas arredondadas do botão */
+            color: white;
+            /* Cor do texto */
+            border: none;
+            /* Remove borda padrão */
+            margin: 5px;
+            /* Espaço entre os botões */
+        }
+
+        .btn-custom {
+            width: 152.98px;
+            /* Largura do botão */
+            height: 28px;
+            /* Altura do botão */
+            background: transparent;
+            /* Cor de fundo do botão */
+            border-radius: 35px;
+            /* Bordas arredondadas do botão */
+            color: #878787;
+            /* Cor do texto */
+            border: 1px solid #4A96D2;
+            border-radius: 35px;
+            margin: 5px;
+            /* Espaço entre os botões */
+        }
+
+        @media screen and (min-width: 340px) and (max-width: 765px) {
+            #cookie-consent {
+                position: fixed;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                padding: 20px;
+                display: none;
+                z-index: 1000;
+                background: #F8F8F8;
+                border-radius: 35px;
+                width: 310px;
+                height: 289px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                margin-bottom: 27%;
+            }
+        }
+    </style>
+    <div id="cookie-consent" role="alert">
+        <p style="display: flex;margin-top: 10px;font-size: 13px;color: #4A96D2;">Controle sua privacidade</p>
+        <p style="font-size: 14px;text-align: justify;">Este site usa cookies para melhorar sua experiência de
+            navegação.<br>
+            Ao continuar navegando, você concorda com a nossa Política de Privacidade.</p>
+        <p style="display: flex;margin-top: 10px;font-size: 13px;color: #4A96D2;">Política de privacidade</p>
+        <div>
+            <button id="accept-cookies" class="btn btn-custom">
+                <p style="display: flex;justify-content: center;align-items: end;margin-top: -4%;">Rejeitar</p>
+            </button>
+            <button id="reject-cookies" class="btn btn-custom1">
+                <p style="display: flex;justify-content: center;align-items: end;margin-top: -2%;">Aceitar</p>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Função para mostrar o consentimento
+        function showCookieConsent() {
+            document.getElementById('cookie-consent').style.display = 'block'; // Exibe a notificação
+        }
+
+        // Função para aceitar os cookies
+        function acceptCookies() {
+            document.getElementById('cookie-consent').style.display = 'none'; // Oculta a notificação
+            // Aqui você pode adicionar lógica para configurar os cookies
+        }
+
+        // Função para rejeitar os cookies
+        function rejectCookies() {
+            document.getElementById('cookie-consent').style.display = 'none'; // Oculta a notificação
+            // Aqui você pode adicionar lógica para não configurar cookies
+        }
+
+        // Adiciona os eventos de clique aos botões
+        document.getElementById('accept-cookies').addEventListener('click', acceptCookies);
+        document.getElementById('reject-cookies').addEventListener('click', rejectCookies);
+
+        // Mostra o aviso ao carregar a página
+        window.onload = showCookieConsent;
+        $(document).ready(function () {
+            $('a[href^="#"]').on('click', function (event) {
+                event.preventDefault();
+                $('.menu').removeClass('show');
+                var target = $($(this).attr('href'));
+                if (target.length) {
+                    $('html, body').animate({
+                        scrollTop: target.offset().top
+                    }, 500);
+                }
+            });
+        });
+
+
+    </script>
+
+
+    <style>
+        @media screen and (max-width: 1080px) {
+            .menute {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                padding: 25px 34px;
+                border-color: #44494B;
+                border-width: 1px;
+                border: 1px solid #44494B;
+                width: 100vw;
+                height: 75px;
+                background: #002D44;
+
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+
+            }
+
+            .menuteduvida {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding: 25px 1px;
+                border-color: #44494B;
+                border-width: 1px;
+                border: 1px solid #44494B;
+                width: 100vw;
+                height: 100%;
+                background: #44494B;
+
+            }
+
+            .menu {
+                padding: 0px !important;
+                justify-content: start;
+                background-color: #002D44;
+            }
+
+            .menu.show {
+                display: flex;
+                width: 100vw;
+                height: 100vh;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                z-index: 999
+            }
+
+            .duvida {
+                width: 78vw;
+                text-align: center;
+            }
+        }
+    </style>
     <div class="header">
-        <img src="./assets/logo.png" class="logo" alt="Logo" />
+        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/logo.png" class="logo" alt="Logo" />
         <div class="hamburger" onclick="toggleMenu()">
             <span></span>
             <span></span>
             <span></span>
         </div>
         <div class="menu">
-            <a href="">Quero me associar</a>
-            <a href="">Planos</a>
-            <a href="">Quem Somos</a>
-            <a href="" class="duvida">Dúvidas</a>
+            <div class="imgmoba"
+                style=" text-align: left; background-color: #002334; display: flex; width: 100%; margin: 0px; padding-top: 20px; padding-bottom: 20px; "
+                onclick="toggleMenu()">
+                <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/logo.png" class="logo" style="
+                   height: 80%;
+                    object-fit: contain;
+                    display: block;
+                    margin: 0;
+                    margin-left: 10px;
+                    position: relative;" alt="Logo" />
+            </div>
+            <div class="menute">
+
+                <a href="#inputs">Quero me associar</a>
+            </div>
+            <div class="menute">
+
+                <a href="#desktflex">Planos</a>
+            </div>
+            <div class="menute">
+
+                <a href="">Quem Somos</a>
+            </div>
+            <div class="menuteduvida">
+
+                <a href="#duvida" class="duvida">Dúvidas</a>
+            </div>
         </div>
     </div>
 
@@ -646,13 +884,19 @@
         }
     </script>
     <div class="center">
-        <img src='./assets/mapa.png' class="img-fluid w-100 imgdesk" style="object-fit: contain;" />
-        <img src='./assets/mapaMob.png' class="img-fluid w-100 imgmoba" style="object-fit: contain;" />
+        <img src='http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/mapa.png'
+            class="img-fluid w-100 imgdesk" style="object-fit: contain;" />
+        <img src='http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/mapaMob.png'
+            class="img-fluid w-100 imgmoba" style="object-fit: contain;" />
         <div>
-            <section class="produtos-servicos">
-                <h2>Conheça <span>todos os produtos<br>e serviços</span> que oferecemos</h2>
-                <div id="produtosCarousel" class="carousel slide" data-bs-ride="carousel">
-                    <div class="carousel-indicators">
+            <div id="corre">
+                <script>
+
+                    document.getElementById('corre').innerHTML = document.documentElement.clientWidth <= 1080 ? `
+                <section class="produtos-servicos">
+                    <h2>Conheça <span>todos os produtos<br>e serviços</span> que oferecemos</h2>
+                    <div id="produtosCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
                         <button type="button" data-bs-target="#produtosCarousel" data-bs-slide-to="0" class="active"
                             aria-current="true" aria-label="Slide 1"></button>
                         <button type="button" data-bs-target="#produtosCarousel" data-bs-slide-to="1"
@@ -671,21 +915,21 @@
                             <div class="row justify-content-center d-flex" style="margin: 0 07%;">
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/1.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/1.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
                                     <h3>PORTAL DO MEI</h3>
                                     <p>Saia da informalidade com a ajuda dos especialistas da ACSP.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://portaldomei.com.br/">SAIBA MAIS</a>
                                 </div>
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/2.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/2.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
                                     <h3>ATIVAR NEGÓCIOS</h3>
                                     <p>Grupos de Negócios divididos por região para criar conexões e resultados.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/lp-ativar-os-negocios">SAIBA MAIS</a>
                                 </div>
                             </div>
                         </div>
@@ -693,22 +937,22 @@
                             <div class="row justify-content-center d-flex" style="margin: 0 07%;">
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/3.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/3.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
                                     <h3>EQUIFAX | BOAVISTA</h3>
                                     <p>Pacotes de análises de crédito de clientes e fornecedores para maior segurança
                                         nas negociações.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/lp-boavistapacotes">SAIBA MAIS</a>
                                 </div>
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/4.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/4.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>PORTAL DO MEI</h3>
+                                    <h3>ESCRITÓRIO REGIONAL JUCESP</h3>
                                     <p>Facilidade para abrir, fechar ou fazer alterações de contratos.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/jucesp/s/escritorio-regional-da-junta-comercial">SAIBA MAIS</a>
                                 </div>
                             </div>
                         </div>
@@ -716,22 +960,22 @@
                             <div class="row justify-content-center d-flex" style="margin: 0 07%;">
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/5.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/5.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>ATIVAR NEGÓCIOS</h3>
+                                    <h3>POSTO INTERNO DA RECEITA FEDERAL</h3>
                                     <p>Agilidade e facilidade com atendimento exclusivo para associados.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/servicos/s/receita-federal">SAIBA MAIS</a>
                                 </div>
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/6.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/6.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>EQUIFAX | BOAVISTA</h3>
+                                    <h3>EMISSÃO DE CERTIFICADO DIGITAL</h3>
                                     <p>Quatro tipos de certificado, com segurança e validade jurídica, com descontos
                                         para associados.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/lp-certificado-home">SAIBA MAIS</a>
                                 </div>
                             </div>
                         </div>
@@ -739,23 +983,23 @@
                             <div class="row justify-content-center d-flex" style="margin: 0 07%;">
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/7.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/7.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>PORTAL DO MEI</h3>
+                                    <h3>DESCONTO PARA ASSOCIADOS</h3>
                                     <p>Plataforma online com ofertas de produtos e serviços para o seu negócio e também
                                         para você.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/servicos/s/clube-de-descontos-acsp">SAIBA MAIS</a>
                                 </div>
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/8.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/8.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>ATIVAR NEGÓCIOS</h3>
+                                    <h3>EMISSÃO DE DECLARAÇÃO DE EXCLUSIVIDADE</h3>
                                     <p>Ateste que sua empresa é a única a comercializar determinado produto ou serviço
                                         em até 72 horas.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/servicos/s/declaracao-de-exclusividade">SAIBA MAIS</a>
                                 </div>
                             </div>
                         </div>
@@ -763,22 +1007,22 @@
                             <div class="row justify-content-center d-flex" style="margin: 0 07%;">
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/9.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/9.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>EQUIFAX | BOAVISTA</h3>
+                                    <h3>CÂMARA DE CONCILIAÇÃO MEDIAÇÃO E ARBITRAGEM</h3>
                                     <p>Soluções de conflitos empresariais com sigilo, agilidade e segurança jurídica.
                                     </p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://camara.acsp.com.br/?utm_source=portal-acsp&_ga=2.123614082.8018206.1607948496-1501819290.1606835926">SAIBA MAIS</a>
                                 </div>
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/10.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/10.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>PORTAL DO MEI</h3>
+                                    <h3>POSTO DO TRIBUNAL DE JUSTIÇA PARA MEDIAÇÃO DE CONFLITOS ENTRE PESSOAS JURÍDICAS</h3>
                                     <p>Sistema de solução para questões relacionadas aos direitos patrimoniais.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/publicacao/s/posto-do-tribunal-de-justica-para-mediacao-de-conflitos-entre-pessoas-juridicas">SAIBA MAIS</a>
                                 </div>
                             </div>
                         </div>
@@ -786,23 +1030,23 @@
                             <div class="row justify-content-center d-flex" style="margin: 0 07%;">
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/11.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/11.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>ATIVAR NEGÓCIOS</h3>
+                                    <h3>PARCERIAS PARA ASSOCIADOS</h3>
                                     <p>Oportunidades para você aumentar sua renda e ainda beneficiar seus clientes com
                                         uma série de vantagens.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://acsp.com.br/lp-clubedeoportunidades">SAIBA MAIS</a>
                                 </div>
                                 <div class="card col-md-6 text-center mb-1">
                                     <div>
-                                        <img src="./assets/icons/12.png" class="img-fluid my-3"
+                                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/12.png" class="img-fluid my-3"
                                             style="object-fit: contain; width: 70px; height: 70px;" />
                                     </div>
-                                    <h3>EQUIFAX | BOAVISTA</h3>
+                                    <h3>FACULDADE DO COMÉRCIO</h3>
                                     <p>Formação qualificada em cursos de graduação para empresários e profissionais do
                                         comércio.</p>
-                                    <a href="#">SAIBA MAIS</a>
+                                    <a href="https://facsp.com.br/?_ga=2.142224500.712996847.1605715172-227773985.1601398454">SAIBA MAIS</a>
                                 </div>
                             </div>
                         </div>
@@ -819,8 +1063,128 @@
                         <span class="visually-hidden">Próximo</span>
                     </button>
                 </div>
-            </section>
+            </section>`: `
+              <section class="produtos-servicos">
+                <h2 style="padding-top: 800px;">Conheça <span>todos os produtos<br>e serviços</span> que oferecemos</h2>
+                <div class="row justify-content-center d-flex " style="margin: 0 07%;">
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/1.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>PORTAL DO MEI</h3>
+                        <p>Saia da informalidade com a ajuda dos especialistas da ACSP.</p>
+                        <a href="https://portaldomei.com.br/">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/2.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>ATIVAR NEGÓCIOS</h3>
+                        <p>Grupos de Negócios divididos por região para criar conexões e resultados.</p>
+                        <a href="https://acsp.com.br/lp-ativar-os-negocios">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/3.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>EQUIFAX | BOAVISTA</h3>
+                        <p>Pacotes de análises de crédito de clientes e fornecedores para maior segurança nas
+                            negociações.</p>
+                        <a href="https://acsp.com.br/lp-boavistapacotes">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/4.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>ESCRITÓRIO REGIONAL JUCESP</h3>
+                        <p>Facilidade para abrir, fechar ou fazer alterações de contratos.</p>
+                        <a href="https://acsp.com.br/jucesp/s/escritorio-regional-da-junta-comercial">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/5.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>POSTO INTERNO DA RECEITA FEDERAL</h3>
+                        <p>Agilidade e facilidade com atendimento exclusivo para associados.</p>
+                        <a href="https://acsp.com.br/servicos/s/receita-federal">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/6.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>EMISSÃO DE CERTIFICADO DIGITAL</h3>
+                        <p>Quatro tipos de certificado, com segurança e validade jurídica, com descontos para
+                            associados.</p>
+                        <a href="https://acsp.com.br/lp-certificado-home">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/7.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>DESCONTOS PARA ASSOCIADOS</h3>
+                        <p>Plataforma online com ofertas de produtos e serviços para o seu negócio e também para você.
+                        </p>
+                        <a href="https://acsp.com.br/servicos/s/clube-de-descontos-acsp">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/8.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>EMISSÃO DE DECLARAÇÃO DE EXCLUSIVIDADE</h3>
+                        <p>Ateste que sua empresa é a única a comercializar determinado produto ou serviço em até 72
+                            horas.</p>
+                        <a href="https://acsp.com.br/servicos/s/declaracao-de-exclusividade">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/9.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>CÂMARA DE CONCILIAÇÃO MEDIAÇÃO E ARBITRAGEM</h3>
+                        <p>Soluções de conflitos empresariais com sigilo, agilidade e segurança jurídica.</p>
+                        <a href="https://camara.acsp.com.br/?utm_source=portal-acsp&_ga=2.123614082.8018206.1607948496-1501819290.1606835926">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/10.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>POSTO DO TRIBUNAL DE JUSTIÇA PARA MEDIAÇÃO DE CONFLITOS ENTRE PESSOAS JURÍDICAS</h3>
+                        <p>Sistema de solução para questões relacionadas aos direitos patrimoniais.</p>
+                        <a href="https://acsp.com.br/publicacao/s/posto-do-tribunal-de-justica-para-mediacao-de-conflitos-entre-pessoas-juridicas">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/11.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>PARCERIAS PARA ASSOCIADOS</h3>
+                        <p>Oportunidades para você aumentar sua renda e ainda beneficiar seus clientes com uma série de
+                            vantagens.</p>
+                        <a href="https://acsp.com.br/lp-clubedeoportunidades">SAIBA MAIS</a>
+                    </div>
+                    <div class="card col-md-4 text-center mb-1 ">
+                        <div>
+                            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/icons/12.png" class="img-fluid my-3"
+                                style="object-fit: contain; width: 70px; height: 70px;" />
+                        </div>
+                        <h3>FACULDADE DO COMÉRCIO</h3>
+                        <p>Formação qualificada em cursos de graduação para empresários e profissionais do comércio.</p>
+                        <a href="https://facsp.com.br/?_ga=2.142224500.712996847.1605715172-227773985.1601398454">SAIBA MAIS</a>
+                    </div>
+                </div>
+            </section>`
+                </script>
 
+            </div>
 
             <div class=" form">
                 <div class="formulario">
@@ -829,34 +1193,61 @@
                             <strong>Seja um parceiro</strong> da<br>Associação Comercial de São Paulo
                         </h3>
                         <div class="form-container ">
-                            <form>
+                            <form action="https://t2controllerapi.acsp.com.br/sfwebtolead/save" autocomplete="off"
+                                id="myForm" method="POST" enctype="application/x-www-form-urlencoded">
+                                <input type="hidden" name="debug" value="0" required="" />
+                                <input type="hidden" name="debugEmail" value="mspereira@acsp.com.br" required="" />
+                                <input type="hidden" name="LEADSOURCE" value="Landing Page" required="" />
+                                <input type="hidden" name="AREANEGOCIO" value="Associativismo" required="" />
+                                <input type="hidden" name="pagina_origem" value="http://associativismo.acsp.com.br/"
+                                    required="" />
+                                <input type="hidden" name="PRODUTO" value="associativismo" required="" />
+                                <input type="hidden" name="00N3i00000CFIil" value="1" required="" />
+
                                 <div class="row mb-3">
-                                    <div class="col-md-6">
-                                        <input type="text" class="form-control" id="nome" placeholder="Nome completo*"
-                                            required>
+                                    <div class="col-md-6 marin">
+                                        <input type="text" class="form-control" id="nome" name="NMCONTATO"
+                                            placeholder="Nome completo*" required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <input type="tel" class="form-control" id="telefone" placeholder="Telefone*"
-                                            required>
+                                    <div class="col-md-6 ">
+                                        <input type="tel" class="form-control" id="telefone" name="TELEFONE"
+                                            placeholder="Telefone*" required>
                                     </div>
                                 </div>
+
                                 <div class="mb-3">
-                                    <input type="email" class="form-control" id="email" placeholder="E-mail*" required>
+                                    <input type="email" class="form-control" id="email" name="EMAILCONTATO"
+                                        placeholder="E-mail*" required>
                                 </div>
+
                                 <div class="mb-3">
-                                    <textarea class="form-control" id="mensagem" rows="1"
+                                    <textarea class="form-control" id="mensagem" name="OBS" rows="1"
                                         placeholder="Mensagem"></textarea>
                                 </div>
 
+                                <div class="mb-3">
+                                    <label class="form-label lab" style="color: white; margin-left: 13px;">Você está
+                                        buscando essa solução para:</label>
+                                    <select class="form-select formao" aria-label="Selecione uma opção"
+                                        id="Voce_esta_buscando_essa_solucao_para__c"
+                                        name="Voce_esta_buscando_essa_solucao_para__c" required>
+                                        <option value="" disabled selected>Selecione aqui</option>
+                                        <option value="Pessoa Física">Pessoa Física</option>
+                                        <option value="Pessoa Jurídica">Pessoa Jurídica</option>
+                                    </select>
+                                </div>
 
                                 <div class="form-check mb-3" style="display: flex; flex-direction: row;">
-                                    <input type="checkbox" class="form-check-input" id="politica" required>
-                                    <label class="form-check-label" for="politica">Ao informar meus dados, eu concordo
-                                        com a
-                                        Política de Privacidade</label>
+                                    <input type="checkbox" class="form-check-input" id="politica" name="COMUNICADOS"
+                                        value="sim" required>
+                                    <label class="form-check-label" for="politica"> Ao informar meus dados, eu concordo
+                                        com a Política de Privacidade</label>
                                 </div>
+
+                                <div class="g-recaptcha" data-sitekey="6LeWoFkeAAAAAHQp_aaprWIWCPqNVJgug7sja2Cu"></div>
+
                                 <div style="display: flex; justify-content: center;">
-                                    <button type="submit" class="btn btn-primary  btn-block mt-3 fale">FALE JÁ COM
+                                    <button type="submit" class="btn btn-primary btn-block mt-3 fale">FALE JÁ COM
                                         ESPECIALISTA</button>
                                 </div>
                             </form>
@@ -904,20 +1295,22 @@
                         z-index: -1;">
                     </div>
 
-                    <img src="./assets/frontassocia.png" style="width: auto; height: 85%; margin-left: 50px;" />
+                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/frontassocia.png"
+                        style="width: auto; height: 85%; margin-left: 50px;" />
                 </div>
             </div>
-            <img src="./assets/frontmoba.png" style="width: 100vw; object-fit: contain;" class="imgmoba" />
+            <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/frontmoba.png"
+                style="width: 100vw; object-fit: contain;" class="imgmoba" />
 
             <div class="viga">
                 <div style="position: absolute; height: 86%; width: 500px; border-radius: 25px; background-color: #FEC553; right: -450px"
-                    class="imgdesk">
-                </div>
+                    class="imgdesk"></div>
                 <h2 style="color: #4A96D2">O que fazemos?</h2>
                 <h3 style="margin-bottom: 20px">Atuamos em benefício de nossos<br>associados de diferentes formas:
                 </h3>
                 <div class='retang'>
-                    <img src="./assets/fazemos/1.png" class="img-fluid my-3"
+                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/fazemos/1.png"
+                        class="img-fluid my-3"
                         style="object-fit: contain; width: 61px; height: 70px; margin-left: 30px" />
                     <div class="barras">
                         <p>
@@ -928,23 +1321,26 @@
                     </p>
                 </div>
                 <div class='retang'>
-                    <img src="./assets/fazemos/2.png" class="img-fluid my-3"
+                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/fazemos/2.png"
+                        class="img-fluid my-3"
                         style="object-fit: contain; width: 61px; height: 70px; margin-left: 30px" />
                     <div class="barras">
                         <p>Representamos nossos associados ouvindo suas demandas,<br>organizando e promovendo ações que
-                            buscam resolver, junto <br>ao poder público, os problemas que afetam as suas empresas.</p>
+                            buscam resolver, junto ao poder público, os problemas que afetam as suas empresas.</p>
                     </div>
                 </div>
                 <div class='retang'>
 
-                    <img src="./assets/fazemos/3.png" class="img-fluid my-3"
+                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/fazemos/3.png"
+                        class="img-fluid my-3"
                         style="object-fit: contain; width: 61px; height: 70px; margin-left: 30px" />
                     <div class="barras">
                         <p>Informamos e capacitamos o empreendedor e suas equipes.</p>
                     </div>
                 </div>
                 <div class='retang'>
-                    <img src="./assets/fazemos/4.png" class="img-fluid my-3"
+                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/fazemos/4.png"
+                        class="img-fluid my-3"
                         style="object-fit: contain; width: 61px; height: 70px; margin-left: 30px" />
                     <div class="barras">
                         <p>Negociamos com nossos parceiros comerciais para<br>oferecer produtos, serviços e soluções com
@@ -1035,16 +1431,20 @@
 
                             <div class="carousel-content">
                                 <div class="carousel-slide active">
-                                    <img src="./assets/fazemos/00.png" class="carousel-image" />
+                                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/fazemos/00.png"
+                                        class="carousel-image" />
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="./assets/fazemos/01.png" class="carousel-image" />
+                                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/fazemos/01.png"
+                                        class="carousel-image" />
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="./assets/fazemos/02.png" class="carousel-image" />
+                                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/fazemos/02.png"
+                                        class="carousel-image" />
                                 </div>
                                 <div class="carousel-slide">
-                                    <img src="./assets/fazemos/03.png" class="carousel-image" />
+                                    <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/fazemos/03.png"
+                                        class="carousel-image" />
                                 </div>
                             </div>
                         </div>
@@ -1135,7 +1535,7 @@
                 <div class="col-md-3 d-flex justify-content-center">
                     <div class=" pt-4 pb-5 text-white">
                         <strong>Redes sociais</strong>
-                        <p class="text-white pt-4 d-flex">
+                        <a href="https://www.facebook.com/associacaocomercialsp/" class="text-white pt-4 d-flex">
                             <svg width="24" height="25" viewBox="0 0 24 25" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -1143,9 +1543,9 @@
                                     fill="#F9FAFA" />
                             </svg>
                             &nbsp;Facebook
-                        </p>
-                        <p class="text-white d-flex"><svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                        </a>
+                        <a href="https://br.linkedin.com/company/acsp" class="text-white d-flex"><svg width="24"
+                                height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0_179_2268)">
                                     <path
                                         d="M11.9997 0.979797C5.63734 0.979797 0.479736 6.1374 0.479736 12.4998C0.479736 18.8622 5.63734 24.0198 11.9997 24.0198C18.3621 24.0198 23.5197 18.8622 23.5197 12.4998C23.5197 6.1374 18.3621 0.979797 11.9997 0.979797ZM9.17974 17.2746H6.84694V9.7674H9.17974V17.2746ZM7.99894 8.8458C7.26214 8.8458 6.78574 8.3238 6.78574 7.6782C6.78574 7.0194 7.27654 6.513 8.02894 6.513C8.78134 6.513 9.24214 7.0194 9.25654 7.6782C9.25654 8.3238 8.78134 8.8458 7.99894 8.8458ZM17.6997 17.2746H15.3669V13.1142C15.3669 12.1458 15.0285 11.4882 14.1849 11.4882C13.5405 11.4882 13.1577 11.9334 12.9885 12.3618C12.9261 12.5142 12.9105 12.7302 12.9105 12.945V17.2734H10.5765V12.1614C10.5765 11.2242 10.5465 10.4406 10.5153 9.7662H12.5421L12.6489 10.809H12.6957C13.0029 10.3194 13.7553 9.597 15.0141 9.597C16.5489 9.597 17.6997 10.6254 17.6997 12.8358V17.2746Z"
@@ -1157,9 +1557,9 @@
                                     </clipPath>
                                 </defs>
                             </svg>
-                            &nbsp;Linkedin</p>
-                        <p class="text-white d-flex"><svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                            &nbsp;Linkedin</a>
+                        <a href="https://www.instagram.com/acsp_oficial/" class="text-white d-flex"><svg width="24"
+                                height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M12 0.5C5.37258 0.5 0 5.87258 0 12.5C0 19.1274 5.37258 24.5 12 24.5C18.6274 24.5 24 19.1274 24 12.5C24 5.87258 18.6274 0.5 12 0.5ZM9.36165 6.13868C10.0443 6.10761 10.2625 6.10001 12.0006 6.10001H11.9986C13.7373 6.10001 13.9546 6.10761 14.6373 6.13868C15.3186 6.16988 15.784 6.27775 16.192 6.43601C16.6133 6.59935 16.9693 6.81802 17.3253 7.17402C17.6813 7.52976 17.9 7.88683 18.064 8.30777C18.2213 8.71471 18.3293 9.17978 18.3613 9.86112C18.392 10.5438 18.4 10.7619 18.4 12.5001C18.4 14.2382 18.392 14.4558 18.3613 15.1385C18.3293 15.8196 18.2213 16.2848 18.064 16.6919C17.9 17.1127 17.6813 17.4697 17.3253 17.8255C16.9697 18.1815 16.6132 18.4007 16.1924 18.5641C15.7852 18.7224 15.3196 18.8303 14.6382 18.8615C13.9556 18.8925 13.7381 18.9001 11.9998 18.9001C10.2618 18.9001 10.0438 18.8925 9.36112 18.8615C8.67991 18.8303 8.21471 18.7224 7.8075 18.5641C7.38683 18.4007 7.02976 18.1815 6.67416 17.8255C6.31829 17.4697 6.09962 17.1127 5.93601 16.6917C5.77788 16.2848 5.67001 15.8197 5.63868 15.1384C5.60774 14.4557 5.60001 14.2382 5.60001 12.5001C5.60001 10.7619 5.60801 10.5437 5.63855 9.86098C5.66921 9.17991 5.77721 8.71471 5.93588 8.30763C6.09988 7.88683 6.31855 7.52976 6.67456 7.17402C7.03029 6.81815 7.38736 6.59948 7.8083 6.43601C8.21524 6.27775 8.68031 6.16988 9.36165 6.13868Z"
                                     fill="#F9FAFA" />
@@ -1170,15 +1570,15 @@
                                     d="M12.0005 10.3667C13.1787 10.3667 14.1339 11.3218 14.1339 12.5001C14.1339 13.6782 13.1787 14.6334 12.0005 14.6334C10.8223 14.6334 9.86719 13.6782 9.86719 12.5001C9.86719 11.3218 10.8223 10.3667 12.0005 10.3667Z"
                                     fill="#F9FAFA" />
                             </svg>
-                            &nbsp;Instagram</p>
-                        <p class="text-white d-flex"><svg width="24" height="25" viewBox="0 0 24 25" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
+                            &nbsp;Instagram</a>
+                        <a href="https://www.youtube.com/@acspdigital" class="text-white d-flex"><svg width="24"
+                                height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M12 0.5C5.37258 0.5 0 5.87258 0 12.5C0 19.1274 5.37258 24.5 12 24.5C18.6274 24.5 24 19.1274 24 12.5C24 5.87258 18.6274 0.5 12 0.5ZM17.0008 8.37464C17.5516 8.52577 17.9853 8.97108 18.1325 9.53659C18.4 10.5615 18.4 12.7 18.4 12.7C18.4 12.7 18.4 14.8384 18.1325 15.8634C17.9853 16.4289 17.5516 16.8742 17.0008 17.0254C16.0027 17.3 12 17.3 12 17.3C12 17.3 7.99732 17.3 6.99914 17.0254C6.44837 16.8742 6.01463 16.4289 5.86743 15.8634C5.60001 14.8384 5.60001 12.7 5.60001 12.7C5.60001 12.7 5.60001 10.5615 5.86743 9.53659C6.01463 8.97108 6.44837 8.52577 6.99914 8.37464C7.99732 8.09998 12 8.09998 12 8.09998C12 8.09998 16.0027 8.09998 17.0008 8.37464Z"
                                     fill="#F9FAFA" />
                                 <path d="M10.8 14.9V10.9L14 12.9L10.8 14.9Z" fill="#F9FAFA" />
                             </svg>
-                            &nbsp;Youtube</p>
+                            &nbsp;Youtube</a>
                     </div>
                 </div>
                 <div class="col-md-3"></div>
@@ -1186,7 +1586,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 d-flex align-items-center">
-                        <img src="./assets/logo.png" class="logo" style="height: 59px;" alt="Logo" />
+                        <img src="http://teste.acsp.com.br/public/upload/gallery/associa-ttdmw64/logo.png" class="logo"
+                            style="height: 59px;" alt="Logo" />
                     </div>
                     <div class="col-md-6 d-flex align-items-center justify-content-center">
                         <p style="color: white; font-weight: 100; font-size: 15px;">
@@ -1197,6 +1598,479 @@
             </div>
 
         </div>
+        <script>
+            // Valor deve conter um dos seguintes valores "Associativismo", "ACConsulta", "ACMarcas", "ACSP Legal", "Jucesp", "Declaração de Exclusividade"
+            const ORGIN_PAGE = 'Associativismo'
+
+            const INTEGRATION_ID = "66671202ef4ccdf1c193a089";
+            const VISUAL_IDENTIFICATION = "Associação Comercial de São Paulo";
+            const FINAL_MESSAGE = 'Atendimento encerrado. Agradecemos seu contato.'
+
+            const FIRST_BUTTON_IDENTIFIER = 'Falar com Vendas'
+            const SECOND_BUTTON_IDENTIFIER = 'Falar com Suporte'
+
+            // Script de Inicialização do Smooch
+            !(function (o, p, s, e, c) {
+                var i,
+                    a,
+                    h,
+                    u = [],
+                    d = [];
+                function t() {
+                    var t = "You must provide a supported major version.";
+                    try {
+                        if (!c) throw new Error(t);
+                        var e,
+                            n = "https://cdn.smooch.io/",
+                            r = "smooch";
+                        if (
+                            (e =
+                                "string" == typeof this.response
+                                    ? JSON.parse(this.response)
+                                    : this.response).url
+                        ) {
+                            var o = p.getElementsByTagName("script")[0],
+                                s = p.createElement("script");
+                            s.async = !0;
+                            var i = c.match(/([0-9]+).?([0-9]+)?.?([0-9]+)?/),
+                                a = i && i[1];
+                            if (i && i[3]) s.src = n + r + "." + c + ".min.js";
+                            else {
+                                if (!(4 <= a && e["v" + a])) throw new Error(t);
+                                s.src = e["v" + a];
+                            }
+                            o.parentNode.insertBefore(s, o);
+                        }
+                    } catch (e) {
+                        e.message === t && console.error(e);
+                    }
+                }
+                (o[s] = {
+                    init: function () {
+                        i = arguments;
+                        var t = {
+                            then: function (e) {
+                                return d.push({ type: "t", next: e }), t;
+                            },
+                            catch: function (e) {
+                                return d.push({ type: "c", next: e }), t;
+                            },
+                        };
+                        return t;
+                    },
+                    on: function () {
+                        u.push(arguments);
+                    },
+                    render: function () {
+                        a = arguments;
+                    },
+                    destroy: function () {
+                        h = arguments;
+                    },
+                }),
+                    (o.__onWebMessengerHostReady__ = function (e) {
+                        if ((delete o.__onWebMessengerHostReady__, (o[s] = e), i))
+                            for (var t = e.init.apply(e, i), n = 0; n < d.length; n++) {
+                                var r = d[n];
+                                t = "t" === r.type ? t.then(r.next) : t.catch(r.next);
+                            }
+                        a && e.render.apply(e, a), h && e.destroy.apply(e, h);
+                        for (n = 0; n < u.length; n++) e.on.apply(e, u[n]);
+                    });
+                var n = new XMLHttpRequest();
+                n.addEventListener("load", t),
+                    n.open("GET", "https://" + e + ".webloader.smooch.io/", !0),
+                    (n.responseType = "json"),
+                    n.send();
+            })(window, document, "Smooch", INTEGRATION_ID, "5");
+
+            var smooch = Smooch.init({
+                integrationId: INTEGRATION_ID,
+                delegate: {
+                    beforeSend(message, data) {
+                        if (message.text == FIRST_BUTTON_IDENTIFIER || message.text == SECOND_BUTTON_IDENTIFIER) {
+                            message.text = message.text + ` (${ORGIN_PAGE})`
+                        }
+
+                        return message;
+                    }
+                },
+                locale: "pt-br",
+                businessName: VISUAL_IDENTIFICATION,
+                /*businessIconUrl:
+                  "https://acsp2.file.force.com/sfc/dist/version/renditionDownload?rendition=ORIGINAL_Png&versionId=0686e00000aRbXV&operationContext=DELIVERY&contentId=05T6e00001oOjiU&page=0&d=/a/6e000000R2lm/tc2owBdYD_P2HEKO.z9C0G6Evb6aNBT6obhZ1Lg1uuk&oid=00D3i000000p2ED&dpt=null&viewId=",
+        
+                customColors: {
+                  brandColor: "58C5C6",
+                  conversationColor: "002C43",
+                  actionColor: "59C4C7",
+                },*/
+
+                prechatCapture: {
+                    enabled: true,
+                    enableEmailLinking: true,
+                    fields: [
+                        {
+                            type: "text",
+                            name: "fName",
+                            label: "Primeiro Nome",
+                            placeholder: "Primeiro Nome",
+                        },
+                        {
+                            type: "text",
+                            name: "lName",
+                            label: "Sobrenome",
+                            placeholder: "Sobrenome",
+                        },
+                        {
+                            type: "email",
+                            name: "email",
+                            label: "Email",
+                            placeholder: "seu@email.com",
+                        },
+                        {
+                            type: "text",
+                            name: "telefone",
+                            label: "Telefone",
+                            placeholder: "(xx)xxxxx-xxxx",
+                        },
+                    ],
+                },
+
+                customText: {
+                    headerText: "Como posso te ajudar?",
+                    inputPlaceholder: "Digite uma mensagem...",
+                    inputPlaceholderBlocked: "Complete o formulário acima...",
+                    sendButtonText: "Enviar",
+                    clickToRetry: "Mensagem não enviada, clique para tentar novamente",
+                    conversationListHeaderText: "Minhas conversas",
+                    messageError:
+                        "Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente",
+                    messageIndicatorTitlePlural: "{count} Novas mensagens",
+                    messageIndicatorTitleSingular: "{count} Nova mensagem",
+                    messageRelativeTimeDay: "{value}d atrás",
+                    messageRelativeTimeHour: "{value}h atrás",
+                    messageRelativeTimeJustNow: "Agora mesmo",
+                    messageRelativeTimeMinute: "{value}min atrás",
+                    messageTimestampFormat: "hh:mm",
+                    messageDelivered: "Entregue",
+                    messageSeen: "Lida",
+                    messageSending: "Enviando...",
+                    clickToRetryForm: 'Formulário não foi enviado. Clique em qualquer lugar do formulário para tentar novamente.',
+                    prechatCaptureGreetingText:
+                        "Olá!\nPara iniciarmos o atendimento, por favor preencha o formulário abaixo:",
+                    prechatCaptureConfirmationText:
+                        "Obrigado pelas informações.",
+                    messageTooLongError: "Tamanho máximo da mensagem atingido ({size})",
+                    newConversationButtonText: "Nova conversa",
+                    conversationListRelativeTimeJustNow: "Agora",
+                    conversationListRelativeTimeMinute: "1 minuto atrás",
+                    conversationListRelativeTimeMinutes: "{value} minutos atrás",
+                    conversationListRelativeTimeHour: "1 hora atrás",
+                    conversationListRelativeTimeHours: "{value} horas atrás",
+                    conversationListRelativeTimeYesterday: "Ontem",
+                    conversationListTimestampFormat: "DD/MM/YYYY",
+                    conversationListPreviewAnonymousText: "Alguém",
+                    conversationListPreviewCarouselText: "{user} enviou uma mensagem",
+                    conversationListPreviewFileText: "{user} enviou um arquivo",
+                    conversationListPreviewFormText: "{user} enviou um formulário",
+                    conversationListPreviewFormResponseText:
+                        "{user} preencheu um formulário",
+                    conversationListPreviewImageText: "{user} enviou uma imagem",
+                    conversationListPreviewLocationRequestText:
+                        "{user} pediu sua localização",
+                    conversationListPreviewUserText: "Você",
+                    conversationTimestampHeaderFormat: "MMMM D YYYY, h:mm A",
+                    couldNotConnect: "Você está desconectado",
+                    couldNotConnectRetry: "Reconectando...",
+                    couldNotConnectRetrySuccess: "Agora você está online!",
+                    couldNotLoadConversations: "Não foi possível carregar as conversas",
+                    emailChangeAddress: "Alterar meu email",
+                    emailDescription:
+                        "Para ser notificado via email, entre com o seu endereço de email.",
+                    emailFieldLabel: "Email",
+                    emailFieldPlaceholder: "Endereço de email",
+                    emailFormButton: "Enviar",
+                    emailLinkingErrorMessage:
+                        "Por favor, entre com um endereço de email válido.",
+                    fetchHistory: "Carregar mais",
+                    fetchingHistory: "Carregando histórico",
+                    fileTooLargeError: "Tamanho máximo do arquivo atingido: {size}",
+                    fileTypeError: "Tipo de arquivo não suportado",
+                    formErrorInvalidEmail: "Email inválido",
+                    formErrorNoLongerThan:
+                        "Não é permitido mais que {characters} caracteres.",
+                    formErrorNoShorterThan:
+                        "É necessário conter no mínimo {characters} caracteres.",
+                    formErrorUnknown: "Isso não parece válido",
+                    formFieldSelectPlaceholderFallback: "Escolha...",
+                    syncConversation: "Sincronizar a conversa",
+                    linkChannelPageHeader: "Sincronizar sua conversa",
+                    notificationSettingsChannelsDescription:
+                        "Sincronize esta conversa com o seu aplicativo de mensagens favorito",
+                    connectNotificationText:
+                        "Sincronize esta conversa com o seu aplicativo de mensagens favorito",
+                    telegramChannelDescription:
+                        "Conecte com sua conta do Telegram para você continuar esta conversa por lá.",
+                    messengerChannelDescription:
+                        "Conecte com sua conta do Messenger para você continuar esta conversa por lá.",
+                    whatsappChannelDescriptionDesktop:
+                        "Conecte com sua conta do WhatsApp escaneando o QR code ou clicando no botão abaixo.\nEntão, envie a mensagem pré definida para sincronizar a sua conversa. (Seu código: {{code}}).",
+                    whatsappChannelDescriptionMobile:
+                        "Conecte com sua conta do WhatsApp clicando no botão abaixo.\nEntão, envie a mensagem pré definida para sincronizar a sua conversa. (Seu código: {{code}}).",
+                    whatsappLinkingError:
+                        "Um erro ocorreu no processo de sincronizar suas informações. Por favor, tente novamente.",
+                },
+            }).then(function () {
+                //ABRIR O WEBCHAT QUANDO DESEJA UM NOVO ATENDIMENTO
+                /*if(localStorage.getItem('autoOpenWebchat')){
+                  localStorage.removeItem("autoOpenWebchat")
+                  setTimeout(() => handleOpenWebchat(), 2000)
+                }*/
+
+                //INSERÇÃO DE ESTILIZAÇÃO
+                document.getElementById('web-messenger-container').contentDocument.head.insertAdjacentHTML('beforeend', "<style>.logo{display: none;} .form-field-btn{display: none;} .help-block{display: none;} .single-sending{ background-color: #F4F6F8; padding: 7px; border: none; border-color: #d4d4d4; cursor:pointer; display: flex; justify-content: center; align-items: center; gap: 5px; font-weight: 600; } .single-sending:hover { background-color: #d4d4d4; } #switch { background-color: transparent; border: none; position: absolute; display: inline-block;top:0; height: 64px; width: 100%; z-index: 9999; border-radius: 50%; cursor:pointer; transition: all 1s; } #switch #tooltipText { display: none; position: absolute; right:75px; top: 10px;  opacity: 0; width: 120px; background-color: rgba(0, 0, 0, 0.589); color: #fff; text-align: center; padding: 5px; border-radius: 6px; width: 390px backdrop-filter: blur(10px); transition: all 0.3s; } #switch:hover #tooltipText { display: block;  visibility: visible; opacity: 1; top:0;}</style>");
+
+                let chatComponent = document.getElementById("web-messenger-container").contentDocument;
+                //DEFININDO LARGURA MINIMA DO COMPONENT
+                document.getElementById("web-messenger-container").style.minWidth = '300px';
+
+                //CRIAÇÃO DO TOOLTIP
+                chatComponent.getElementById('messenger-button').insertAdjacentHTML('beforeend', '<button id="switch"><span id="tooltipText">Fale com o especialista da ACSP</span></button>');
+                chatComponent.getElementById('switch').addEventListener('click', () => handleOpenWebchat());
+
+                //CRIAÇÃO DO BOTÃO DE ENVIO DO PRECHAT
+                chatComponent.getElementById('conversation').insertAdjacentHTML('afterend', '<button class="single-sending" style="display:none !important" id="singleSending" >Enviar <img src="https://cdn.smooch.io/e919a9d2ad97771092814b56d0348130.svg" alt=""></button>')
+
+                //CRIAÇÃO DO BOTÃO DE RESETAR CHAT
+                chatComponent.getElementById('conversation').insertAdjacentHTML('afterend', '<button class="single-sending" style="display:none" id="restart" >Novo Atendimento</button>')
+
+                //chatComponent.getElementById("header").style.backgroundColor ="#002C43";
+
+                //ADICIONANDO ENVENTO DE CLICK NO BOTÃO DE ENVIO DE PRECHAT
+                chatComponent.getElementById('singleSending').addEventListener('click', () => sendPrechat());
+
+                //ADICIONANDO ENVENTO DE CLICK NO BOTÃO DE RESETAR CHAT
+                chatComponent.getElementById('restart').addEventListener('click', () => restartClick());
+
+            });
+
+            //tooltip
+            function handleOpenWebchat() {
+                let chatComponent = document.getElementById('web-messenger-container').contentDocument;
+                chatComponent.getElementById('switch').style.display = 'none';
+                Smooch.open();
+            }
+
+
+
+            //reiniciar chamado
+            function restartClick() {
+                const chatComponent = document.getElementById('web-messenger-container').contentDocument;
+
+                /*
+                localStorage.setItem("autoOpenWebchat", true)
+                localStorage.removeItem(`${INTEGRATION_ID}.sessionToken`);
+                localStorage.removeItem("existentUser");
+                location.reload()*/
+
+                chatComponent.getElementById('restart').style.display = 'none';
+                chatComponent.getElementById('footer').style.display = 'flex';
+                Smooch.getConversationById().then((currentConversation) => {
+                    Smooch.sendMessage('Olá, gostaria de inciar um novo atendimento.', currentConversation?.id);
+                });
+            }
+
+            //ENVIAR O PRECHAT
+            function sendPrechat() {
+                const chatComponent = document.getElementById('web-messenger-container').contentDocument;
+                const sendButtons = chatComponent.getElementsByClassName('form-field-btn')
+
+                Array.prototype.forEach.call(sendButtons, button => {
+                    button.click()
+                })
+            }
+
+            //fechamento manual do chat do smooch
+            Smooch.on('widget:closed', function () {
+                let chatComponent = document.getElementById("web-messenger-container").contentDocument;
+
+                setTimeout(() => {
+                    chatComponent.getElementById('switch').style.display = 'inline-block';
+                }, 500)
+                chatComponent.getElementById('restart').style.display = 'none';
+            });
+
+            //fechamento automatico do chat do smooch
+            Smooch.on("message", function (message, data) {
+                if (message?.source.type == "api" && message.text == FINAL_MESSAGE) {
+                    let chatComponent = document.getElementById('web-messenger-container').contentDocument;
+                    //localStorage.removeItem(`${INTEGRATION_ID}.sessionToken`);
+                    //localStorage.removeItem("existentUser");
+
+                    chatComponent.getElementById('restart').style.display = 'inline-block';
+                    chatComponent.getElementById('footer').style.display = 'none';
+                }
+            });
+            data = {
+                conversation: {
+                    id: "<conversation-id>",
+                },
+            };
+
+            Smooch.on("widget:opened", function () {
+                let chatComponent = document.getElementById('web-messenger-container').contentDocument;
+
+                console.log(chatComponent);
+
+                //ESCONDE TOOLTIP
+                chatComponent.getElementById('switch').style.display = 'none';
+
+                //Alterar cor do Header
+                //chatComponent.getElementById('header').style.backgroundColor = '#002C43';
+
+                //DEFINE VISIBILIDADE DO BOTÃO DE ENVIAR PRECHAT
+                if (localStorage.getItem(`${INTEGRATION_ID}.sessionToken`) == null && chatComponent.getElementById('restart').style.display == 'none') {
+                    setTimeout(function () {
+                        chatComponent.getElementById('singleSending').style.display = 'flex';
+                    }, 500);
+                } else {
+                    setTimeout(function () {
+                        chatComponent.getElementById('singleSending').style.display = 'none';
+                    }, 500);
+                }
+
+                //DEFINE VISIBILIDADE DO BOTÃO DE RESETAR CHAT
+                Smooch.getConversationById().then((currentConversation) => {
+
+                    const messages = currentConversation.messages
+                    const lastMessage = messages[messages.length - 1]
+
+                    if (lastMessage?.text == FINAL_MESSAGE) {
+                        setTimeout(function () {
+                            chatComponent.getElementById('restart').style.display = 'inline-block';
+                            chatComponent.getElementById('footer').style.display = 'none';
+                        }, 500);
+                    }
+                })
+                //const inboundMessages = chatComponent.querySelectorAll(".messages .left-row .message-text");
+                //const finalMessage = Array.prototype.find.call(inboundMessages, msg => msg.textContent == searchText)
+            });
+
+            function setNativeValue(element, value) {
+                let lastValue = element.value;
+                element.value = value;
+                let event = new Event("input", { target: element, bubbles: true });
+                // React 15
+                event.simulated = true;
+                // React 16
+                let tracker = element._valueTracker;
+                console.log(tracker)
+                if (tracker) {
+                    tracker.setValue(lastValue);
+                }
+                element.dispatchEvent(event);
+            }
+
+
+            //PASSOU PELO PRECHAT
+            if (localStorage.getItem(`${INTEGRATION_ID}.sessionToken`) == null) {
+                Smooch.on("connected", function (data) {
+                    var chatComponent = document.getElementById("web-messenger-container").contentDocument;
+                    chatComponent.getElementById('singleSending').style.display = 'none';
+
+                });
+            };
+        </script>
+        <style>
+            .btnWhatsapp a img {
+                display: block;
+                width: 65px;
+                border-radius: 80%;
+
+            }
+
+            .btnWhatsapp {
+                position: fixed;
+                right: 0px;
+                bottom: 116px;
+                z-index: 100;
+            }
+        </style>
+        <div class="btnWhatsapp associativismo" id="associativismo" style="display:block !important;overflow: hidden;">
+            <a href="https://api.whatsapp.com/send/?phone=551131803737&amp;text=Ol%C3%A1!%20Vim%20pelo%20site%20do%20Acmarcas%20e%20gostaria%20de%20conversar%20com%20voc%C3%AAs"
+                id="associativismo" title="Whatsapp" target="_blank">
+                <img src="http://teste.acsp.com.br/public/upload/gallery/testeteste/icone%20whatsApp.png" alt="" />
+            </a>
+        </div>
+        <script>
+            document.getElementById('myForm').addEventListener('submit', function (event) {
+                event.preventDefault();
+
+                const nome = document.getElementById('nome').value.trim();
+                const telefone = document.getElementById('telefone').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const comunicados = document.getElementById('politica').checked;
+                const validade = document.getElementById('Voce_esta_buscando_essa_solucao_para__c').value;
+
+                let errors = [];
+
+                if (!nome) errors.push('Campo Nome é obrigatório.');
+                if (!telefone || telefone.length < 10) errors.push('Telefone inválido.');
+                if (!email || !validateEmail(email)) errors.push('E-mail inválido.');
+                if (!comunicados) errors.push('Você deve concordar com a Política de Privacidade.');
+                if (!validade) errors.push('Você deve selecionar uma opção.');
+
+                if (errors.length > 0) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Por favor, preencha todos os campos do formulário, pois são obrigatórios.',
+                        html: errors.join('<br>')
+                    });
+                } else {
+                    fetch(this.action, {
+                        method: 'POST',
+                        body: new URLSearchParams(new FormData(this)).toString(),
+                        headers: {
+                            'Content-Type': 'application/x-www-form-urlencoded',
+                            'Authorization': 'Basic cGFyY2Vpcm9zX2Fjc3BfaG9tb2w6cDRyY2UxcjBzX2gwbTBs'
+                        }
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.status) {
+                                document.querySelectorAll('input[type=text], input[type=email], input[type=tel], textarea').forEach(input => input.value = '');
+                                document.getElementById('politica').checked = false;
+                                Swal.fire({
+                                    text: 'Agradecemos pelo seu interesse! Em breve, nossa equipe de especialistas entrará em contato com você',
+                                    icon: 'success',
+                                    confirmButtonText: 'Fechar'
+                                }).then(() => {
+                                    window.location.href = 'https://acsp.com.br/lp-agradecimento-clube';
+                                });
+                            } else {
+                                Swal.fire({
+                                    text: data.resposta || 'Erro ao enviar a mensagem',
+                                    icon: 'error',
+                                    confirmButtonText: 'Fechar'
+                                });
+                            }
+                        })
+                        .catch(() => {
+                            Swal.fire({
+                                text: 'Erro inesperado. Tente novamente mais tarde.',
+                                icon: 'error',
+                                confirmButtonText: 'Fechar'
+                            });
+                        });
+                }
+            });
+
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        </script>
 </body>
 
 </html>
